@@ -14,9 +14,10 @@ Clone this repo on a *nix machine and install and configure [s3cmd](http://s3too
 s3cmd --configure```
 
 Use config values:
-| Access Key | Secret Key | HTTPS |
-| --- | --- | --- |
-| AKIAJFTCM6WM3WUVH4OQ | nCPlnwu9p/63LIb8AI51bnNvf7vmVZercjYN9hYe | yes |
+
+Access Key | Secret Key | HTTPS
+--- | --- | ---
+AKIAJFTCM6WM3WUVH4OQ | nCPlnwu9p/63LIb8AI51bnNvf7vmVZercjYN9hYe | yes
 
 Then, from your machine, run:
 ```s3cmd sync CLONED-LOCAL-REPO/ s3://www.smartypal.com/```
