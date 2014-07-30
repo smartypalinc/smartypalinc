@@ -11,9 +11,8 @@ To deploy on S3
 Clone this repo on a *nix machine and install and configure [s3cmd](http://s3tools.org/s3cmd):
 
 ```
-sudo apt-get install s3cmd
-
-s3cmd --configure
+$ sudo apt-get install s3cmd
+$ s3cmd --configure
 ```
 
 Use config values:
