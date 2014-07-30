@@ -3,7 +3,7 @@ smartypal.com
 
 http://www.smartypal.com is currently being served as a static site on Amazon S3 in the "www.smartypal.com" bucket.
 
-S3 is currently configured to serve the index.min.html file as the homepage and the /css/style.min.css and /js/smarty.min.js files. Be sure when making edits to update minifications accordingly.
+S3 is currently configured to serve the index.html file as the homepage and the /css/style.min.css and /js/smarty.min.js files. Be sure when making edits to update minifications accordingly.
 
 To deploy on S3
 ---------------
