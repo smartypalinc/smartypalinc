@@ -1,4 +1,4 @@
-smartypaldotcom
+smartypal.com
 ===============
 
 http://www.smartypal.com is currently being served as a static site on Amazon S3 in the "www.smartypal.com" bucket.
@@ -10,8 +10,11 @@ To deploy on S3
 
 Clone this repo on a *nix machine and install and configure [s3cmd](http://s3tools.org/s3cmd):
 
-```sudo apt-get install s3cmd
-s3cmd --configure```
+```
+sudo apt-get install s3cmd
+
+s3cmd --configure
+```
 
 Use config values:
 
