@@ -5,7 +5,9 @@ by EGrappler.com
 
 **************/
 
-@import url(http://fonts.googleapis.com/css?family=Lilita+One|Londrina+Outline|Fredoka+One|McLaren|Capriola|Mouse+Memoirs|Coming+Soon);
+/*@import url(http://fonts.googleapis.com/css?family=Lilita+One|Londrina+Outline|Fredoka+One|McLaren|Capriola|Mouse+Memoirs|Coming+Soon);*/
+
+@import url(http://fonts.googleapis.com/css?family=Fredoka+One|Noto+Sans:400,700|Cabin+Condensed:600);
 
 h1 { font-family: 'Fredoka One', cursive !important; }
 h2 { font-family: 'Fredoka One', cursive !important; font-weight: 200; }
@@ -106,7 +108,7 @@ h2 {
                         0 16px 0 1px #222,
                         0 22px 0 1px #222;
     box-shadow: 0 10px 0 1px #222,
-                0 16px 0 1px #222,
+                0 16px 0 1px #222,
                 0 22px 0 1px #222;
 }
 .top-bar.expanded .toggle-topbar.menu-icon a,
@@ -118,7 +120,7 @@ h2 {
                         0 16px 0 1px #888,
                         0 22px 0 1px #888;
     box-shadow: 0 10px 0 1px #888,
-                0 16px 0 1px #888,
+                0 16px 0 1px #888,
                 0 22px 0 1px #888;
 }
 .top-bar .active a {
@@ -811,7 +813,7 @@ a:hover, a:focus {
 color: #f06060;
 }
 .button.white {
-   clear: both;
+   clear: both;
     color: #4e97cc;
     background-color: white;
     border: 0 !important;
@@ -984,8 +986,8 @@ color: #f06060;
 
 #whatyouget .pricing-table .bullet-item {
     text-align: left;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 

@@ -1,0 +1,1 @@
+<html><head></head><body><script type="text/javascript">window.location = "http://server.smartypal.com/change_password";</script><a href="http://server.smartypal.com/change_password"><h2 style="text-align:center; margin: 0 auto; font-family: sans-serf;">Click here to reset your password.</h2></a></body></html>
