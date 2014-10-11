@@ -640,6 +640,11 @@ header .call-to-action .mainCTA:hover {
 #email-send:hover {
     box-shadow: 0 3px 0 #FBBF51 !important;
 }
+
+#email-send2:hover {
+    box-shadow: 0 3px 0 #FBBF51 !important;
+}
+
 #fb_pixel {
     height: 1px;
     width: 1px;
@@ -2222,12 +2227,13 @@ you can use the generic selector below, but it's slower:
 }
 @media only screen and (max-width: 767px) {
 
-    .logo img {
+    .top-bar .logo img {
         width: 210px;
-        margin-left: -55px;
         padding-top: 17px;
-        position: absolute;
-        z-index: 100;
+        margin: 0 auto;
+        display: block;
+        position: relative;
+        left: 16px;
     }
     .menu-icon {
         margin-left: 15px;
@@ -2271,6 +2277,9 @@ you can use the generic selector below, but it's slower:
     #main-text .subheading {
         font-size: 28px;
         margin-top: -30px;
+    }
+    #main-text .subheading#sh2 {
+        margin-top: -10px;
     }
     .call-to-action .main-pricing {
         height: 56px !important;
