@@ -70,6 +70,73 @@ function formSubmit() {
     }
 }
 
+
+var campaign_id = window.location.hash.replace('#','');
+var subs = 0;
+function formSubmit2() {
+    var _email=$('#email2').val().toLowerCase();
+    if(subs===0){
+        if(_email.indexOf('@')==-1) {
+            $('#email-send2').text("Enter valid email");
+            setTimeout( function(){$('#email-send2').text("Submit");}, 2500);
+            ga('send', 'event', 'Email Form', 'Failed Submission', 'Invalid Name/Email');
+        }
+        else {
+            $('#email-send2').text("Sending email...");
+            $.ajax({
+                type: "POST",
+                url: "https://mandrillapp.com/api/1.0/messages/send.json",
+                data: {
+                    'key': 'kYTvkI3alIJpJo9OJw475w',
+                    'message': {
+                        'from_email': 'info@smartypal.com',
+                        'to': [
+                            {
+                                'email': 'info@smartypal.com',
+                                'name': 'SmartyPal Team',
+                                'type': 'to'
+                            }
+                        ],
+                        'autotext': 'true',
+                        'subject': 'Facebook Campaign Conversion',
+                        'html': '<html xmlns="http://www.w3.org/1999/xhtml"><body><h1>Facebook Landing Page Conversion</h1><h2>Email: '+_email+'</h2><h2>Campaign ID: '+campaign_id+'</h2></body></html>'
+                    }
+                }
+            }).fail(function() {
+                $('#email-send2').text("Sorry... Try Again");
+                setTimeout(function(){$('#email-send2').text("Submit");} , 2200);
+                ga('send', 'event', 'Email Form', 'Failed Submission', 'Mandrill Failed to Respond');
+            }).done(function(response) {
+               if(response[0]["status"]=="sent"){
+                    subs = subs + 1;
+                    (function() {
+                    var _fbq = window._fbq || (window._fbq = []);
+                    if (!_fbq.loaded) {
+                    var fbds = document.createElement('script');
+                    fbds.async = true;
+                    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(fbds, s);
+                    _fbq.loaded = true;
+                    }
+                    })();
+                    window._fbq = window._fbq || [];
+                    window._fbq.push(['track', String(campaign_id), {'value':'0.01','currency':'USD'}]);
+                    $('#email-send2')
+                        .text("Email Submitted!")
+                        .css({"background":"#d3d3d3","color":"#ffffff"});
+                    ga('send', 'event', 'Email Form', 'Successful Submission');
+               } else {
+                    console.log(response);
+                    $('#email-send2').text("Sorry... try Again");
+                    setTimeout( (function(){$('#email-send2').text("Submit");})() , 2200);
+                    ga('send', 'event', 'Email Form', 'Failed Submission', 'Mandrill Response  != "sent"');
+               }
+            });
+        }
+    }
+}
+
 ////// Universal Analytics
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -79,7 +146,6 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-42710923-1', 'smartypal.com');
 ga('set','allowAnchor',true);
 ga('send', 'pageview');
-window.location.hash = '';
 
 // Scroll depth events (requires external library)
 $(function() {
@@ -113,6 +179,13 @@ $('#email-send').on('tap', function(e,d){
     e.preventDefault();
     formSubmit();
 });
+
+$('#email-send2').on('tap', function(e,d){
+    e.preventDefault();
+    formSubmit2();
+});
+
+
 $("#top-link").click(function() {
     $("html, body").animate({ scrollTop: 0 }, "slow");
     return false;
