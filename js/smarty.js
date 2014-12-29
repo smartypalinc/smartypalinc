@@ -22,7 +22,22 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 ga('create', 'UA-42710923-1', 'smartypal.com');
 
-var campaign_id = String(window.location.hash.replace('#',''));
+$(document).ready(function() {
+  $(window).keydown(function(event){
+    if(event.keyCode == 13) {
+      event.preventDefault();
+      if(window.location.pathname == '/launch/' && $(document.activeElement).attr("id") == "email2"){
+        formSubmit2();
+      }
+      if(window.location.pathname == '/' && ($(document.activeElement).attr("id") == "name" || $(document.activeElement).attr("id") == "email")){
+        formSubmit();
+      }
+      return false;
+    }
+  });
+});
+
+var campaign_id = String(window.location.hash).replace('#','');
 if(campaign_id.length>0){
     console.log("Campaign Id: " + campaign_id);
     ga('send', 'pageview', {'dimension1':  campaign_id});
@@ -99,7 +114,13 @@ function formSubmit2() {
             ga('send', 'event', 'Email Form', 'Failed Submission', 'Invalid Name/Email');
         }
         else {
-            $('#email-send2').text("Sending email...");
+            $('#email-send2').text("Sending email....");
+            var count = 0;
+            var dots = ["Sending email.&nbsp;&nbsp;&nbsp;", "Sending email..&nbsp;&nbsp;", "Sending email...&nbsp;", "Sending email...."]
+            var dots_interval = setInterval(function(){
+              count++;
+              $('#email-send2').html(dots[count % 4]);
+            }, 150);
             $.ajax({
                 type: "POST",
                 url: "https://mandrillapp.com/api/1.0/messages/send.json",
@@ -120,6 +141,7 @@ function formSubmit2() {
                     }
                 }
             }).fail(function() {
+                clearInterval(dots_interval);
                 $('#email-send2').text("Sorry... Try Again");
                 setTimeout(function(){$('#email-send2').text("Submit");} , 2200);
                 ga('send', 'event', 'Email Form', 'Failed Submission', 'Mandrill Failed to Respond');
@@ -139,10 +161,12 @@ function formSubmit2() {
                     })();
                     window._fbq = window._fbq || [];
                     window._fbq.push(['track', campaign_id, {'value':'0.01','currency':'USD'}]);
+                    clearInterval(dots_interval);
                     $('#launch-form').replaceWith('<p style="color: #4e97cc;margin-top: 4%;">Success!<br>Thanks for your interest in SmartyPal.</p>');
                     ga('send', 'event', 'Email Form', 'Successful Submission', campaign_id);
                } else {
                     console.log(response);
+                    clearInterval(dots_interval);
                     $('#email-send2').text("Sorry... try Again");
                     setTimeout( (function(){$('#email-send2').text("Submit");})() , 2200);
                     ga('send', 'event', 'Email Form', 'Failed Submission', 'Mandrill Response  != "sent"');

@@ -641,10 +641,6 @@ header .call-to-action .mainCTA:hover {
     box-shadow: 0 3px 0 #FBBF51 !important;
 }
 
-#email-send2:hover {
-    box-shadow: 0 3px 0 #FBBF51 !important;
-}
-
 #fb_pixel {
     height: 1px;
     width: 1px;
@@ -699,11 +695,40 @@ header .call-to-action .mainCTA:hover {
 .texture {background: url(../img/textures/stripes.png) repeat;height: 100%;width: 100%; position: absolute;top:0;left:0}
 #header {
     /*background-color: #4E97CC;*/
-    background:url(../img/drawing2.jpg) no-repeat center top fixed;
+    background:url(../img/drawing_filled.jpg) no-repeat center top fixed;
     background-size: 1920px 650px;
 }
+
+#header2 {
+    /*background-color: #4E97CC;*/
+    background: url(../img/girl_ipad_wide.jpg);
+    background-position: center;
+    background-size: 2071px 485px;
+    background-repeat: no-repeat;
+}
+
+#header2 h1 {
+    font-size: 56px;
+    line-height: 25px;
+}
+
+#header2 .subheading {
+    font-size: 26px;
+}
+
 #teaser-slider-2 {
     background-image: url(../img/ipad_hands.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    margin-top: 0;
+    margin-left: 10px;
+    overflow: visible;
+    height: 440px;
+    width: auto;
+    max-width: 440px;
+}
+
+#teaser-slider-2-prev {
     background-size: 100% auto;
     background-repeat: no-repeat;
     margin-top: 0;
