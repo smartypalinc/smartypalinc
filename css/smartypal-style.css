@@ -212,6 +212,12 @@ a:hover {
     background-color: #fff;
 }
 
+.set-apart-icon img {
+    width: 69px;
+    height: auto;
+    padding-top: 17px;
+    padding-left: 18px;
+}
 .set-apart-text {
     margin-top: -45px;
     background-color: #2fb0d4;
@@ -235,6 +241,16 @@ a:hover {
     text-align: center;
     font-size: 16px;
     color: #786f5e;
+}
+
+.section-team {
+    background-color: #ffeaa3;
+}
+
+.footer {
+    background-color: #fbbf51;
+    padding-bottom: 45px;
+    min-height: 145px;
 }
 
 /* md-3 and md-4 sized columns break from horizontal to stacked */
