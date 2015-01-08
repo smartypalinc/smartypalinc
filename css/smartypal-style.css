@@ -4,7 +4,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 {
-    font-size: 1.9em;
+    font-size: 2.1em;
 }
 
 h2 {
@@ -75,21 +75,30 @@ a:hover {
 
 /* ------------------------- */
 
+
+.section-top {
+    background-color: #20a89e;
+    background-image: url("../img/bg-pattern.png");
+    background-repeat: repeat-x;
+    height: 772px;
+    position: relative;
+}
+
 .top-logo {
-    background: url("../img/smartypal_logo_500px.png");
-    /*background-size: 300px auto;
-    width: 300px;
-    height: 84px;*/
-    background-size: 283px auto;
-    width: 283px;
-    height: 79px;
-    background-repeat: no-repeat;
-    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+.top-logo img {
+    width: 55%;
+    max-width: 283px;
+    height: auto;
 }
 
 .nav-links {
-    margin-top: -55px;
-    margin-bottom: 55px;
+    position: relative;
+    top: -55px;
+    right: 55px;
 }
 
 .nav-links a {
@@ -105,34 +114,117 @@ a:hover {
     font-weight: 600;
 }
 
-
-.section-1 {
-    background-color: #20a89e;
-    height: 772px;
+.section-top h1 {
+    padding-top: 20px;
+    line-height: 40px;
 }
 
-/* SECTION THAT'S WHY */
+.download-btn {
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.download-btn p {
+    margin-bottom: 3px;
+}
+
+.download-btn a {
+    color: #fff;
+}
+
+.visible-xs-inline {
+    display: none;
+}
+.ipad {
+    padding-top: 40px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.section-girl {
+    background: #fff;
+    height: 800px;
+    position: relative;
+    z-index: 0;
+    padding-top: 0;
+}
+
+.section-girl .container {
+    position: relative;
+    height: 800px;
+}
+
+.section-girl img.girl {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.screen-time {
+    position: relative;
+    top: 300px;
+    left: 200px;
+    display: inline-block;
+}
+
+.screen-time img {
+    margin-left: 137px;
+    padding-bottom: 25px;
+}
+
+.screen-time h3 {
+    color: #9a2979;
+    margin: 0;
+    text-align: left;
+    font-size: 34px;
+    text-shadow: rgba(0,0,0,.3) 0 1px 0;
+    font-weight: 500;
+    line-height: 50px;
+}
+
+.screen-time p {
+    color: #786f5e;
+    font-size: 18px;
+}
 
 .section-tab {
+    padding-top: 0;
+    margin-top: -60px;
+}
+
+.tab {
     margin: 0 auto;
     height: 120px;
     width: 120px;
     border-radius: 50%;
     background-color: #64305b;
+    position: relative;
+    z-index: 1;
 }
 
-.section-thats-why {
+.tab img {
+    width: 50px;
+    height: auto;
+    margin-left: 34px;
+    margin-top: 18px;
+}
+
+.section-we-set {
     background-color: #64305b;
     margin-top: -60px;
     padding-bottom: 45px;
     min-height: 145px;
 }
 
-.section-thats-why h3 {
+.section-we-set h3 {
     margin: 0 auto;
     text-align: center;
-    max-width: 600px;
-    padding: 0 64px;
+    max-width: 480px;
+    padding: 15px 0 0 0;
+    position: relative;
+    z-index: 2;
 }
 
 /* SECTION CORE PRINCIPLES */
@@ -166,6 +258,20 @@ a:hover {
     z-index: 2;
 }
 
+.core-icon.blue1 img {
+    width: 50px;
+    height: 50px;
+    margin: 12px 0 0 16px;
+}
+
+.core-icon.orange img {
+    margin: 15px 0 0 14px;
+}
+
+.core-icon.green img {
+    margin: 18px 0 0 17px;
+}
+
 .core-text {
     margin-top: -45px;
     background-color: #64305b;
@@ -180,6 +286,12 @@ a:hover {
     padding: 0;
     height: 484px;
     background-color: #2fb0d4;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-ipad img {
+    margin-top: -30px;
 }
 
 .section-what-sets {
@@ -216,6 +328,29 @@ a:hover {
     padding-top: 17px;
     padding-left: 18px;
 }
+
+.set-apart-icon._one img {
+    margin: 5px 0 0 2px;
+}
+
+.set-apart-icon._two img {
+    width: 60px;
+    height: auto;
+    margin: 6px 0 0 7px;
+}
+
+.set-apart-icon._three img {
+    width: 60px;
+    height: auto;
+    margin: 0 0 0 9px;
+}
+
+.set-apart-icon._four img {
+    width: 60px;
+    height: auto;
+    margin: 10px 0 0 5px;
+}
+
 .set-apart-text {
     margin-top: -45px;
     background-color: #2fb0d4;
@@ -262,6 +397,7 @@ a:hover {
 .team-member div {
     margin: 0 auto;
     text-align: center;
+    padding-bottom: 20px;
 }
 
 .team-photo {
@@ -306,14 +442,66 @@ a:hover {
 
 .footer {
     background-color: #fbbf51;
-    padding-bottom: 45px;
-    min-height: 145px;
+    padding-bottom: 25px;
+    min-height: 100px;
+    position: relative;
+    overflow: hidden;
 }
 
-/* md-3 and md-4 sized columns break from horizontal to stacked */
+.footer .container {
+    width: 55%;
+}
+
+.footer-links {
+    text-align: center;
+}
+
+.footer-links div{
+    padding-bottom: 15px;
+}
+
+.footer-links a {
+    font-family: 'Arvo', serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+}
+
+.footer .globe {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    height: 130px;
+}
+
+
+@media (max-width: 1200px) {
+
+    .section-girl img.girl {
+        left: 0;
+    }
+
+    .screen-time {
+        left: 75px;
+    }
+}
+
 @media (max-width: 991px) {
     .double-padding {
         padding: 0 32px;
+    }
+
+    .ipad img {
+        max-width: 100%;
+    }
+
+    .section-girl img.girl {
+        left: -112px;
+    }
+
+    .screen-time {
+        top: 200px;
+        left: 50px;
     }
 
     .set-aparts {
@@ -328,9 +516,12 @@ a:hover {
         padding-top: 0;
         background-color: #4cc8ec;
     }
+
+    .footer .container {
+        width: 90%;
+    }
 }
 
-/* md-3 and md-4 sized columns break from horizontal to stacked */
 @media (max-width: 767px) {
     .double-padding {
         padding: 0 10px;
@@ -340,7 +531,67 @@ a:hover {
         padding: 0 10px;
     }
 
+    .section-top {
+        padding-top: 25px;
+        height: 500px;
+    }
+
+    .section-top h1{
+        font-size: 1.5em;
+        margin-top: -3px;
+        line-height: 30px;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 45px;
+        right: 32px;
+    }
+
+    .ipad img {
+        max-height: 300px;
+    }
+
+    .section-girl, .section-girl .container {
+        height: 600px;
+    }
+
+    .section-girl img.girl {
+        left: 0;
+        width: 100%;
+    }
+
+    .screen-time {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding-top: 120px;
+        z-index: 3;
+    }
+
+    .screen-time img {
+        margin: 0;
+    }
+
+    .screen-time p {
+        font-size: 16px;
+    }
+
+    .screen-time h3 {
+        text-align: center;
+        font-size: 26px;
+        line-height: 28px;
+    }
+
     .set-aparts {
         padding-bottom: 35px
     }
+
+    .visible-xs-inline {
+        display: inline-block !important;
+    }
+
+
 }
