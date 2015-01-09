@@ -25,6 +25,7 @@ h5 {
 section {
     width: 100%;
     padding-top: 45px;
+    overflow: hidden;
 }
 
 header {
@@ -82,6 +83,7 @@ a:hover {
     background-repeat: repeat-x;
     height: 772px;
     position: relative;
+    overflow: visible;
 }
 
 .top-logo {
@@ -231,6 +233,12 @@ a:hover {
 
 .section-principles {
     background-color: #6f345e;
+    position: relative;
+    z-index: 0;
+}
+
+.section-principles-headline {
+    padding-bottom: 15px;
 }
 
 .section-principles-subtext {
@@ -277,6 +285,7 @@ a:hover {
     background-color: #64305b;
     z-index: 1;
     padding: 64px 32px 32px 32px;
+    height: 234px;
 }
 
 
@@ -289,24 +298,34 @@ a:hover {
     margin: 0 auto;
     text-align: center;
     position: relative;
+
 }
 
-.section .ipad-align {
+
+.ipad-contain .ipad-align {
     position: relative;
     width: 10000px;
     left: 50%;
-    margin: 0 0 0 -5000px;
+    margin-right: 0;
+    margin-left: -5000px;
+    margin-top: -534px;
+    margin-bottom: -91px;
     text-align: center;
+    height: 625px;
+    z-index: 1;
 }
 
-.section-ipad img {
-    margin-top: -61px;
+.section-ipad .ipad-align img {
+    margin-top: 0;
+    position: relative;
 }
 
 .section-what-sets {
     background-color: #4cc8ec;
     padding-bottom: 45px;
     min-height: 145px;
+    position: relative;
+    z-index: 0;
 }
 
 .section-set-aparts {
@@ -421,10 +440,18 @@ a:hover {
 }
 
 .team-photo img {
-    width: 120px;
-    height: 120px;
     position: relative;
     border-radius: 50%;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    -ms-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
+.team-photo img.face {
+    width: 120px;
+    height: 120px;
     border: 4px solid #fff;
     box-shadow: rgba(0,0,0,.4) 0 2px 4px;
     -webkit-filter: sepia(20%);
@@ -432,16 +459,45 @@ a:hover {
     filter: sepia(20%);
 }
 
-.team-name h4 {
+.team-photo img.info-icon {
+    width: 112px;
+    height: 112px;
+    opacity: 0;
+    margin-top: -144px;
+}
+
+
+.team-member:hover {
+    cursor: pointer;
+}
+
+.advisors .team-member:hover {
+    cursor: default;
+}
+
+.team-member:hover .team-photo img.info-icon {
+    opacity: 1;
+    background-color: rgba(0,0,0,.4);
+}
+
+.team-member:hover .team-photo img.face {
+    /*webkit-filter: sepia(20%);
+    -moz-filter: sepia(20%);
+    filter: sepia(20%);*/
+}
+
+
+.team-member h4 {
     margin: 10px 0 0 0;
     color: #806226;
     text-shadow: none;
 }
 
-.team-name p {
+.team-member p {
     margin: 0;
     color: #c79840;
 }
+
 
 .advisor-text {
     margin: 0 auto;
@@ -498,9 +554,10 @@ a:hover {
         left: 75px;
     }
 
-    .section-ipad img {
-        margin-left: -60px;
+    .core-text {
+        height: 276px;
     }
+
 }
 
 @media (max-width: 991px) {
@@ -519,6 +576,13 @@ a:hover {
     .screen-time {
         top: 200px;
         left: 50px;
+    }
+
+    .core-text {
+        height: auto;
+        max-width: 500px;
+        margin-right: auto;
+        margin-left: auto;
     }
 
     .set-aparts {
