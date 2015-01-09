@@ -288,10 +288,19 @@ a:hover {
     background-color: #2fb0d4;
     margin: 0 auto;
     text-align: center;
+    position: relative;
+}
+
+.section .ipad-align {
+    position: relative;
+    width: 10000px;
+    left: 50%;
+    margin: 0 0 0 -5000px;
+    text-align: center;
 }
 
 .section-ipad img {
-    margin-top: -30px;
+    margin-top: -61px;
 }
 
 .section-what-sets {
@@ -384,6 +393,10 @@ a:hover {
     color: #c79840;
     text-shadow: none;
     padding-bottom: 20px;
+}
+
+.section-team .container {
+    max-width: 1024px;
 }
 
 .team {
@@ -484,6 +497,10 @@ a:hover {
     .screen-time {
         left: 75px;
     }
+
+    .section-ipad img {
+        margin-left: -60px;
+    }
 }
 
 @media (max-width: 991px) {
@@ -534,6 +551,7 @@ a:hover {
     .section-top {
         padding-top: 25px;
         height: 500px;
+        background-image: none;
     }
 
     .section-top h1{
