@@ -462,24 +462,10 @@ a:hover {
 
 }
 
-.team-member:hover {
-    cursor: pointer;
-}
-
-
-.advisors .team-member:hover {
-    cursor: default;
-}
-
-.team-member:hover .team-photo button.info-icon {
-    opacity: 1;
-    background-color: rgba(0,0,0,.4);
-}
-
-.team-member:hover .team-photo img.face {
-    /*webkit-filter: sepia(20%);
-    -moz-filter: sepia(20%);
-    filter: sepia(20%);*/
+.team-member .team-name button {
+    background: none;
+    border: none;
+    padding: 0;
 }
 
 
@@ -487,6 +473,10 @@ a:hover {
     margin: 10px 0 0 0;
     color: #806226;
     text-shadow: none;
+}
+
+.team-member h4 img {
+    display: none;
 }
 
 .team-member p {
@@ -512,7 +502,9 @@ a:hover {
 }
 
 .modal-header .close {
-    margin-top: 18px;
+    margin-top: 0;
+    font-size: 30px;
+    color: #6f345e;
 }
 
 .team .modal img.face {
@@ -609,6 +601,33 @@ a:hover {
     }
 }
 
+@media (min-width: 1024px) {
+
+    .team-member:hover {
+        cursor: pointer;
+    }
+
+    .team-member:hover .team-photo button.info-icon {
+        opacity: 1;
+        background-color: rgba(0,0,0,.4);
+    }
+
+}
+
+@media (max-width: 1024px) {
+
+    .team .team-member button h4 {
+        text-decoration: underline;
+        font-size: 22px;
+    }
+
+    .team .team-member h4 img {
+        display: inline-block;
+        padding-left: 5px;
+        padding-bottom: 2px;
+        height: 24px;
+    }
+}
 @media (max-width: 991px) {
     .double-padding {
         padding: 0 32px;
