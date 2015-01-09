@@ -298,27 +298,16 @@ a:hover {
     margin: 0 auto;
     text-align: center;
     position: relative;
-
-}
-
-
-.ipad-contain .ipad-align {
-    position: relative;
-    width: 10000px;
-    left: 50%;
-    margin-right: 0;
-    margin-left: -5000px;
-    margin-top: -534px;
-    margin-bottom: -91px;
     text-align: center;
-    height: 625px;
+    overflow: visible;
     z-index: 1;
 }
 
-.section-ipad .ipad-align img {
-    margin-top: 0;
-    position: relative;
+.section-ipad img {
+    max-width: 100%;
+    margin-top: -61px;
 }
+
 
 .section-what-sets {
     background-color: #4cc8ec;
@@ -459,23 +448,30 @@ a:hover {
     filter: sepia(20%);
 }
 
-.team-photo img.info-icon {
+.team-photo button.info-icon {
+    position: relative;
+    bottom: 116px;
+    border-radius: 50%;
+    border: none;
     width: 112px;
     height: 112px;
     opacity: 0;
-    margin-top: -144px;
-}
+    background-image: url("../img/info-icon.png");
+    background-size: 112px;
+    padding: 0;
 
+}
 
 .team-member:hover {
     cursor: pointer;
 }
 
+
 .advisors .team-member:hover {
     cursor: default;
 }
 
-.team-member:hover .team-photo img.info-icon {
+.team-member:hover .team-photo button.info-icon {
     opacity: 1;
     background-color: rgba(0,0,0,.4);
 }
@@ -496,6 +492,49 @@ a:hover {
 .team-member p {
     margin: 0;
     color: #c79840;
+}
+
+.team .modal {
+    padding-top: 15%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.team .modal .modal-content {
+    max-width: 475px;
+    background: #FFEAA3;
+    padding: 20px;
+}
+
+.team .modal-header{
+    border-bottom: none;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.modal-header .close {
+    margin-top: 18px;
+}
+
+.team .modal img.face {
+    background-color: #9e669c;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: rgba(0,0,0,.4) 0 2px 4px;
+    -webkit-filter: sepia(20%);
+    -moz-filter: sepia(20%);
+    filter: sepia(20%);
+}
+
+.team .modal .modal-body p {
+    text-align: left;
+    color: #806226;
+    padding-bottom: 20px;
+}
+
+.team .modal button.btn {
+    background-color: #6f345e;
 }
 
 
@@ -558,6 +597,16 @@ a:hover {
         height: 276px;
     }
 
+    .section-ipad {
+        height: 100%;
+    }
+
+    .section-ipad img {
+        display: inline-block;
+        max-width: 100%;
+        margin-top: -45px;
+        margin-bottom: -60px;
+    }
 }
 
 @media (max-width: 991px) {
