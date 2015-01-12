@@ -121,6 +121,15 @@ a:hover {
     line-height: 40px;
 }
 
+/* Promo content */
+.section-top h1.promo {
+    padding-top: 0;
+}
+
+.email-capture .col-sm-6 {
+    text-align: center;
+}
+
 .download-btn {
     text-align: center;
     margin: 0 auto;
@@ -495,16 +504,16 @@ a:hover {
     padding: 20px;
 }
 
+.modal-content .close {
+    margin-top: 0;
+    font-size: 30px;
+    color: #6f345e;
+}
+
 .team .modal-header{
     border-bottom: none;
     width: 90%;
     margin: 0 auto;
-}
-
-.modal-header .close {
-    margin-top: 0;
-    font-size: 30px;
-    color: #6f345e;
 }
 
 .team .modal img.face {
@@ -519,9 +528,14 @@ a:hover {
     filter: sepia(20%);
 }
 
+.team .modal .modal-body {
+    padding-top: 0;
+}
+
 .team .modal .modal-body p {
     text-align: left;
     color: #806226;
+    padding-top: 0;
     padding-bottom: 20px;
 }
 
@@ -603,7 +617,7 @@ a:hover {
 
 @media (min-width: 1024px) {
 
-    .team-member:hover {
+    .team .team-member:hover {
         cursor: pointer;
     }
 
