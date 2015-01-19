@@ -130,10 +130,54 @@ a:hover {
 /* Promo content */
 .section-top h1.promo {
     padding-top: 0;
+    padding-bottom: 25px;
 }
 
-.email-capture .col-sm-6 {
-    text-align: center;
+.form-contain {
+    margin-bottom: 40px;
+}
+
+#email-capture input {
+    width: 75;
+    max-width: 450px;
+    height: 50px;
+    font-weight: 200;
+    color: #786f5e;
+    font-size: 32px;
+    padding-left: 8px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: rgba(0,0,0,.3) 0 0 30px;
+}
+
+.form-contain button{
+    width: 25%;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    position: relative;
+    bottom: 2px;
+    margin-left: 5px;
+    background-color: #6f345e;
+    box-shadow: rgba(0,0,0,.3) 0 0 10px;
+    font-size: 25px;
+
+}
+
+.steps {
+    padding-bottom: 25px
+}
+
+.steps h1 {
+    padding-top: 4px;
+}
+
+.step {
+    padding-bottom: 25px
+}
+
+.steps .step .core-text {
+    background-color: #1a8c84;
 }
 
 .download-btn {
