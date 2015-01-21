@@ -204,6 +204,11 @@ a:hover {
     z-index: 2;
 }
 
+.promo-desc-title {
+    background-color: #1a8c84;
+    padding-bottom: 45px;
+}
+
 .section-girl {
     background: #fff;
     height: 800px;
@@ -279,7 +284,7 @@ a:hover {
     min-height: 145px;
 }
 
-.section-we-set h3 {
+.section-we-set h2, .section-we-set h3 {
     margin: 0 auto;
     text-align: center;
     max-width: 480px;
