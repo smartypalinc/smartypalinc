@@ -34,3 +34,31 @@ $('button.info-icon').on('tap', function(e,d){
     ga('send', 'event', 'Team Member Info', Name );
 });
 
+$('.ipad a#video-link').on('tap', function(e,d){
+    if($('#videoModal').length==0){
+        $('.ipad a#video-link').append('<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">' +
+                        '<div class="modal-dialog">' +
+                            '<div class="modal-content">' +
+                                '<div class="modal-body">' +
+                                    '<video autoplay id="promo-video" class="video-js vjs-default-skin"' +
+                                      'controls preload="auto" width="100%" height="auto"' +
+                                      'poster="http://video-js.zencoder.com/oceans-clip.png">' +
+                                         '<!--<source src="http://video-js.zencoder.com/oceans-clip.mp4" type="video/mp4" />-->' +
+                                         '<source src="video/promo-video-short_896x504.mp4" type="video/mp4" />' +
+                                         '<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>'+
+                                    '</video>' +
+                                '</div>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>'
+        )
+        $('#videoModal').modal("show")
+    }
+    ga('send', 'event', 'Promo Video', 'Played video' );
+    $('#videoModal').on('hidden.bs.modal', function () {
+        setTimeout(function(){$("#videoModal").remove()}, 250);
+        ga('send', 'event', 'Promo Video', 'Closed video' );
+    });
+});
+
+

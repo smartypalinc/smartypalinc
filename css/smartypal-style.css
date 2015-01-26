@@ -204,6 +204,29 @@ a:hover {
     z-index: 2;
 }
 
+.ipad a:hover {
+    cursor: pointer;
+}
+
+.ipad .modal-dialog {
+    max-width: 896px;
+    width: auto;
+    margin: 0 auto;
+    padding: 120px 5% 0 5%;
+}
+
+.ipad .modal-dialog .modal-content {
+    background-color: #6f345e;
+}
+
+.ipad .modal-dialog .modal-content .modal-body {
+    padding: 0;
+}
+
+#promo-video video {
+    position: relative;
+}
+
 .promo-desc-title {
     background-color: #1a8c84;
     padding-bottom: 45px;
