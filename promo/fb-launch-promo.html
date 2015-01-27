@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <base href="http://www2.smartypal.com/assets/front-end/"><!--[if lte IE 6]></base><![endif]-->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -87,8 +86,54 @@
             padding-left: 15px;
         }
 
+        .enter-email {
+            height: 42px;
+            padding: 4px 80px;
+            font-size: 25px;
+            text-align: center;
+            display: none;
+        }
+
+        .download-btn {
+            padding: 4px 40px;
+            font-size: 25px;
+            text-align: center;
+            display: none;
+        }
+
+        .promoModal.team {
+            padding-bottom: 0;
+        }
+
+        .promoModal .glyphicon {
+            color: #6f345e;
+            font-size: 90px;
+        }
+
+        #emailInput {
+            border: 1px solid rgba(0,0,0,.3);
+            border-radius: 3px;
+            font-size: 20px;
+            padding: 3px 5px 3px 6px;
+            font-weight: 200;
+            font-size: 30px;
+            width: 95%;
+            color: rgba(0,0,0,.7);
+        }
+
+        .promoModal .modal-body button {
+            margin-top: 15px;
+            margin-bottom: 25px;
+            font-size: 25px;
+            padding: 4px 60px;
+        }
+
         .steps {
             padding-bottom: 55px;
+        }
+
+        .steps h1 .check1 {
+            display: none;
         }
 
         .steps .core-text {
@@ -144,6 +189,17 @@
             }
         }
 
+        @media (max-width: 767px) {
+            .section-top .steps h1 {
+                font-size: 2em;
+                margin-top: 20px;
+                line-height: 40px;
+            }
+
+            .enter-email, .download-btn {
+            font-size: 18px;
+        }
+
     </style>
 </head>
 <body>
@@ -174,23 +230,78 @@
                     <div class="fb-logo"></div>
                     <span>Share to Facebook</span>
                 </button>
+                <button class="enter-email custom-btn purple1">Enter Email</button>
+                <button class="download-btn custom-btn purple1">Download SmartyPal</button>
             </div>
-
-                <!--
-                <form id="email-capture" name="emailCapture">
-                    <div class="">
-                        <div class="email-contain col-sm-6 col-sm-offset-3">
-                            <input type="text" placeholder="Enter email here!"/>
-                            <button value="Submit">Submit</button>
+            <div class="promoModal team">
+                <div class="team-member">
+                    <div class="modal fade" id="fbfailModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <div class="modal-header">
+                                    <span class="glyphicon glyphicon-share"></span>
+                                    <h4 class="modal-title" id="myModalLabel">Oops!</h4>
+                                    <p>You must successfully share this page on your Facebook page to redeem your free content.</p>
+                                </div>
+                                <div class="modal-body">
+                                    <button type="button" class="custom-btn purple1" data-dismiss="modal">Close &amp; Try Again</button>
+                                    <p style="color: #c79840; padding-bottom: 0;">Think you got this message in error? Send us a quick email at <a href="mailto:info@smartypal.com">info@smartypal.com</a> and we'll get this sorted out.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </form>
-                -->
+                </div>
             </div>
+            <div class="promoModal team">
+                <div class="team-member">
+                    <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <div class="modal-header">
+                                    <span class="glyphicon glyphicon-cloud-upload"></span>
+                                    <h4 class="modal-title" id="myModalLabel">Almost there!</h4>
+                                    <p>Please enter your email below so we can sync your free content to the SmaryPal iPad app</p>
+                                </div>
+                                <div class="modal-body">
+                                    <input id="emailInput" type="text" value="" placeholder="Enter email">
+                                    <br>
+                                    <button id="emailSubmit" class="custom-btn purple1">Submit</button>
+                                    <p style="color: #c79840; padding-bottom: 0;">Already have a SmartyPal account? Just enter the email address you used at registration and we'll sync your free content the next time you start the app.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="promoModal team">
+                <div class="team-member">
+                    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <div class="modal-header">
+                                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                                    <h4 class="modal-title" id="myModalLabel">All done!</h4>
+                                    <p>Download the SmartyPal app on your iPad and register or sign in with the email you just provided.</p>
+                                </div>
+                                <div class="modal-body">
+                                    <a href="#">
+                                        <img class="app-icon" src="/img/smartico.png"/>
+                                        <img class="modal-app-store" style="margin-left: 10px;" src="/img/app-store-btn.png"/>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row single-padding steps">
                 <div class="col-md-4 step">
                     <div class="core-icon blue1">
-                        <h1>1</h1>
+                        <h1><span class="num1">1</span><span class="check1 glyphicon glyphicon-ok"></span></h1>
                     </div>
                     <div class="core-text">
                         <h4>Share this page &amp; provide your email</h4>
@@ -358,163 +469,6 @@
         </div>
     </section>
 
-    <!--
-    <section class="section-meet-us">
-        <div class="container">
-            <h2>Meet the Team!</h2>
-            <p class="hidden-xs hidden-sm subtext">We're the parents, creators, and educators behind SmartyPal</p>
-        </div>
-    </section>
-
-    <section class="section-team">
-        <div class="container">
-            <h3>The SmartyPal Team</h3>
-            <div class="row single-padding team">
-                <div class="col-sm-3 team-member">
-                    <div class="team-photo">
-                        <img class="face" src="img/prasanna-krishnan.png">
-                        <button class="info-icon" data-toggle="modal" data-target="#prasannaModal"></button>
-                    </div>
-                    <div class="team-name">
-                        <button class="info-icon" data-toggle="modal" data-target="#prasannaModal">
-                            <h4>Prasanna<img src="img/info-icon-sm.png"></h4>
-                            <p>Chief Mom</p>
-                        </button>
-                    </div>
-                    <div class="modal fade" id="prasannaModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <div class="modal-header">
-                                    <img class="face" src="img/prasanna-krishnan.png">
-                                    <h4 class="modal-title" id="myModalLabel">Prasanna Krishnan, MS, MBA</h4>
-                                    <p>Chief Executive Officer, Co-Founder</p>
-                                </div>
-                                <div class="modal-body">
-                                    <p>
-                                        Before founding SmartyPal, Prasanna was General Manager at Jetsetter where she started a new travel planning service. She was a venture capitalist and Kauffman Fellow at Draper Fisher Jurvetson where she invested in early-stage technology companies, with a focus on education and cloud computing. Prasanna has held product and business development roles at Microsoft and Comcast respectively.
-                                        <br><br>
-                                        Prasanna received an MBA from the Wharton School, where she was a Palmer Scholar. She has a Masters in Computer Science from the University of Illinois at Urbana-Champaign where she was a Siebel Scholar and a Bachelors in Computer Science from BITS, Pilani, India where she was Salutatorian and received the BITS Merit Fellowship.
-                                    </p>
-                                    <button type="button" class="btn" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3 team-member">
-                    <div class="team-photo">
-                       <img class="face" src="img/kartik-hosanagar.png">
-                       <button class="info-icon" data-toggle="modal" data-target="#kartikModal"></button>
-                    </div>
-                    <div class="team-name">
-                        <button class="info-icon" data-toggle="modal" data-target="#kartikModal">
-                            <h4>Kartik<img src="img/info-icon-sm.png"></h4>
-                            <p>Chief Dad</p>
-                        </button>
-                    </div>
-                    <div class="modal fade" id="kartikModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <div class="modal-header">
-                                    <img class="face" src="img/kartik-hosanagar.png">
-                                    <h4 class="modal-title" id="myModalLabel">Kartik Hosanagar, Ph.D.</h4>
-                                    <p>Business Administration, Co-Founder</p>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Kartik is a Professor at The Wharton School at the University of Pennsylvania. His research focuses on the digital economy, including digital media and personalization technologies. Kartik has been recognized as one of the world's top 40 business professors under 40. He is a cofounder of Yodle Inc., listed among the top 50 fastest growing private firms in the US. He has served on the advisory board of Milo Inc. (acquired by eBay) and is involved with several other startups as either an investor or board member. Kartik has a Ph.D. from Carnegie Mellon University.</p>
-                                    <button type="button" class="btn" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3 team-member">
-                    <div class="team-photo">
-                        <img class="face" src="img/lakshmi-sudarsan.png">
-                        <button class="info-icon" data-toggle="modal" data-target="#lakshmiModal"></button>
-                    </div>
-                    <div class="team-name">
-                        <button class="info-icon" data-toggle="modal" data-target="#lakshmiModal">
-                            <h4>Lakshmi<img src="img/info-icon-sm.png"></h4>
-                        </button>
-                        <p>Chief Tech Mom</p>
-                    </div>
-                    <div class="modal fade" id="lakshmiModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <div class="modal-header">
-                                    <img class="face" src="img/lakshmi-sudarsan.png">
-                                    <h4 class="modal-title" id="myModalLabel">Lakshmi Sudarsan, MS</h4>
-                                    <p>Director of Mobile Development, Co-Founder</p>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Lakshmi was previously Mobile Product Engineer at Qualcomm where she designed and developed their mobile platform and served as the company's main technial liason to Verizon Wireless. She was instrumental in launching several technology-based mobile products for Verizon. To pursue her passion for teaching, Lakshmi also worked as a teaching instructor for The Princeton Review, preparing local high school students for the SAT. Her source of inspiration stems from her desire to build a truly educational platform for her daughters that leverages technology and complements their school curriculum.
-                                    <br><br>
-                                    Lakshmi has a Master of Science degree in Electrical and Computer Engineering from the University of Maryland, College Park. She has a Bachelor of Engineering with Honors in Electrical and Electronics from the Birla Institute of Technology and Science, Pilani in India.</p>
-                                    <button type="button" class="btn" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3 team-member">
-                    <div class="team-photo">
-                        <img class="face" src="img/alex-miller.png">
-                        <button class="info-icon" data-toggle="modal" data-target="#alexModal"></button>
-                    </div>
-                    <div class="team-name">
-                        <button class="info-icon" data-toggle="modal" data-target="#alexModal">
-                            <h4>Alex<img src="img/info-icon-sm.png"></h4>
-                            <p>Chief Nerd</p>
-                        </button>
-                    </div>
-                    <div class="modal fade" id="alexModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <div class="modal-header">
-                                    <img class="face" src="img/alex-miller.png">
-                                    <h4 class="modal-title" id="myModalLabel">Alex Miller</h4>
-                                    <p>Data Scientist, Developer</p>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Alex graduated <i>summa cum laude</i> and ΦΒΚ from the Honors College at the University of Oregon where he earned a bachelor's degree in mathematics. Alex’s most recent experience includes marketing execution at a digital agency where he specialized in website analytics and A/B testing. He also spent three years as an employee at the University of Oregon’s College of Education, where he tutored students in the elementary education teacher-prep program.</p>
-                                    <button type="button" class="btn" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <h3>Educational Advisors</h3>
-            <div class="row single-padding advisors">
-                <div class="col-sm-3 col-sm-offset-3 team-member">
-                    <div class="team-photo">
-                        <img class="face"src="img/kathy-hirsh-pasek.png">
-                    </div>
-                    <div class="team-name">
-                        <h4>Kathy</h4>
-                        <p>Hirsh-Pasek, Ph.D.</p>
-                    </div>
-                </div>
-                <div class="col-sm-3 team-member">
-                    <div class="team-photo">
-                        <img class="face"src="img/roberta-golinkoff.png">
-                    </div>
-                    <div class="team-name">
-                        <h4>Roberta</h4>
-                        <p>Golinkoff, Ph.D.</p>
-                    </div>
-                </div>
-            </div>
-            <p class="advisor-text">Drs. Hirsh-Pasek and Golinkoff are nationally renowned researchers in early childhood development. Together, they’ve authored a dozen books and hundreds of articles on developmental psychology, including "Einstein Never Used Flashcards". The APA recognized them both with the Bronfenbrenner Award for Lifetime Contribution to Developmental Psychology.</p>
-        </div>
-    </section>
-    -->
-
     <section class="footer">
         <div class="container">
             <div class="row footer-links">
@@ -545,22 +499,23 @@
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/smarty.js"></script>
     <script>
-    window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '817720588267101',
-          xfbml      : true,
-          version    : 'v2.2'
-        });
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '817720588267101',
+                xfbml      : true,
+                version    : 'v2.2'
+            })
+        };
 
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
 
-      $("button.share-btn").on("click", function(e,d){
+        $("button.share-btn").on("click", function(e,d){
             FB.ui({
                 method: 'feed',
                 link: 'http://www1.smartypal.com/assets/new-site/fb.html',
@@ -568,15 +523,68 @@
             }, function(response){
                 console.log(response);
                 if (response && response.post_id){
-                    alert('did share.')
+                    $("#emailModal").modal("show");
+                    $(".share-btn").hide();
+                    $(".enter-email").show();
                 }
                 else {
-                    alert("did not share.")
+                    $("#fbfailModal").modal("show");
                 }
-
             });
+        });
+
+        function finalState(){
+            $(".num1").hide();
+            $(".check1").show();
+            $(".share-btn").hide();
+            $(".enter-email").hide();
+            $(".download-btn").show();
         }
-      );
+
+        function errorHandler(resp){
+            statusCode = resp.status
+            if(statusCode==420){
+                $("#emailModal").modal("hide");
+                alert(resp.responseJSON["alert"]);
+                finalState();
+            }
+            else {
+                alert("Sorry, there was an error at this time. Please try again later. If the problem persists, please contact us at info@smartypal.com. We apologize for any inconvenience.");
+            }
+        }
+
+        $(".enter-email").on("click", function(e,d){
+            $("#emailModal").modal("show");
+        });
+
+        $("#emailSubmit").on("click", function(e,d){
+            var email = $("#emailInput").val();
+            if (email.indexOf('@')==-1||email.length<5) {
+                alert("Please enter a valid email address.");
+            }
+            else {
+                $.ajax({
+                    type: "POST",
+                    url: "/api/promo/submit-email",
+                    contentType: "application/json; charset=utf-8",
+                    data:JSON.stringify({
+                        "email": email,
+                        "url": document.URL
+                    }),
+                    success: function(resp) {
+                        $("#emailModal").modal("hide");
+                        $("#successModal").modal("show");
+                        finalState();
+                    },
+                    error: function(resp){
+                        errorHandler(resp);
+                    }
+                })
+                .always(function(resp){
+                    console.log(resp);
+                });
+            }
+        });
     </script>
 </body>
 </html>

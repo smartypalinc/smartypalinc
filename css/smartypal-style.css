@@ -80,6 +80,8 @@ a:hover {
 }
 
 .custom-btn {
+    border: none;
+    border-radius: 4px;
     will-change: opacity, transform;
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
