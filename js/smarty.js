@@ -55,7 +55,7 @@ $('.ipad a#video-link').on('tap', function(e,d){
     }
     ga('send', 'event', 'Promo Video', 'Played video' );
     $('#videoModal').on('hidden.bs.modal', function () {
-        setTimeout(function(){$("#videoModal").remove()}, 250);
+        setTimeout(function(){$("#videoModal").remove()}, 125);
         ga('send', 'event', 'Promo Video', 'Closed video' );
     });
 });
