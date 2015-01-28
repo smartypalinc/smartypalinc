@@ -1,0 +1,56 @@
+{# data.html #}
+<html xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Istok Web', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6; margin: 0; padding: 0;">
+    <head>
+        <meta name="viewport" content="width=device-width"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Please Verify Your SmartyPal Account Email</title>
+        <style>
+            @import url(http://fonts.googleapis.com/css?family=Istok+Web:400, 700);
+        </style>
+    </head>
+    <body bgcolor="#ECF5F3" style="font-family: 'Istok Web', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; width: 100% !important; height: 100%; margin: 0; padding: 0; background-color: #ECF5F3;">&#13; &#13; &#13;
+        <table class="body-wrap" style="font-family: 'Istok Web', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6; width: 100%; margin: 0; padding: 20px;">
+            <tr style="font-family: 'Istok Web', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6; margin: 0; padding: 0;">
+                <td style="font-family: 'Istok Web', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6; margin: 0; padding: 0;"></td>&#13;
+                <td class="container" style="font-family: 'Istok Web', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6; display: block !important; max-width: 600px !important; clear: both !important; margin: 0 auto; padding: 0; border: 1px solid #f0f0f0; background-color: #ECF5F3;">&#13; &#13;
+                    <div class="content" style="font-family: 'Istok Web', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6; max-width: 600px; display: block; margin: 0 auto; padding: 20px;border: 1px solid #d4dddb; background-color: #ffffff;">&#13;
+                        <table style="font-family: 'Istok Web', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6; width: 100%; margin: 0; padding: 0;">
+                            <tr style="font-family: 'Istok Web', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6; margin: 0; padding: 0;">
+                                <td style="font-family: 'Istok Web', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6; margin: 0; padding: 0; ">&#13;
+                                    <div style="text-align: center;">
+                                        <img src="https://s3.amazonaws.com/www.smartypal.com/img/smartypal_simple2_500px.png" style="width: 80%; max-width: 300px;margin-top: 15px; margin-bottom: 25px;"/>
+                                    </div>
+                                    <p style="color: #3b3e42; font-family: 'Istok Web', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 25px; line-height: 1.6; font-weight: normal; margin: 0 0 10px; padding: 0;">
+                                    {% if error_info["large_text"] is defined and error_info["large_text"] != "default" %}
+                                        {{ error_info["large_text"] }}
+                                    {% else %}
+                                        Oops...
+                                    {% endif %}
+                                    </p>&#13;
+                                    <p style="color: #60666d; font-family: 'Istok Web', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.6; font-weight: normal; margin: 0 0 10px; padding: 0;">
+                                    {% if error_info["description"] is defined and error_info["description"] != "default" %}
+                                        {{ error_info["description"] }}
+                                    {% else %}
+                                        It looks like we encountered an error. Please contact info@smartypal.com if you have any quesitons. We apologize for any inconvenience.
+                                    {% endif %}
+                                    </p>&#13;
+                                    {% if error_info["redirect"] is defined and error_info["redirect"] != -1 %}
+                                    <p style="color: #60666d; font-family: 'Istok Web', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.6; font-weight: normal; margin: 0 0 10px; padding: 0;">
+                                        You will be redirected momentarily...
+                                    </p>&#13;
+                                    {% else %}
+                                    {% endif %}
+
+                                </td>&#13;</tr>
+                        </table>
+                    </div>&#13; &#13; &#13;</td>&#13;
+                <td style="font-family: 'Istok Web', 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif; font-size: 100%; line-height: 1.6; margin: 0; padding: 0;"></td>&#13;</tr>
+        </table>
+        {% if error_info["redirect"] is defined and error_info["redirect"] != -1 %}
+            <script>
+            setTimeout(function(){window.location.replace("http://www.smartypal.com?error")},{{ error_info["redirect"] }});
+        </script>
+        {% else %}
+        {% endif %}
+    </body>
+</html>
